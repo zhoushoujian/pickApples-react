@@ -9,21 +9,20 @@ class App extends Component {
      let name = "红苹果 --";
      let num = parseInt(Math.random()*100000,10);   //取随机数
      let weight = parseInt(Math.random()*1000,10);  //取随机数
-     let obj = {"name":name,"num":num,"weight":weight,"index":index}
-     let list = []
-     list.push(obj)   //初始化初始状态的数据
+     let obj = {"name":name,"num":num,"weight":weight,"index":index};
+     let list = [];
+     list.push(obj);   //初始化初始状态的数据
      this.state = {
        list : list,  //保存子组件变量的对象
        number : list.length,  //当前苹果数量
        totalWeight : list[0].weight,   //当前苹果的总重量
        eatApples : 0,  //吃掉苹果的数量
        eatWeighth :0   //吃掉苹果的重量
-     }
+     };
   }
 
   handleAddClick = () => {
       let {list,number,totalWeight} = this.state;
-      //console.log("list",list)
       let name = "红苹果 --";
       let num = parseInt(Math.random()*100000,10);
       let weight = parseInt(Math.random()*1000,10);
@@ -31,7 +30,6 @@ class App extends Component {
       if(list.length !== 0){
         index = list[list.length-1].index;   //如果子组件的个数不为零,则取上一个组件的index,然后+1
         index++;
-        //console.log(index)
       } else {
         index = 0;  //如果子组件被清空,则重新计数
       }
@@ -51,7 +49,6 @@ class App extends Component {
  
   changeWeight = (apple) => {
     let {list,totalWeight} = this.state;
-    //console.log("list",list);
     list.forEach((v) => {
        if(v.weight === apple){
         v.weight = parseInt(Math.random()*1000,10);   //如果苹果的重量和我们点击的那个苹果的重量相等,就改变点击的那个苹果的重量
@@ -68,15 +65,12 @@ class App extends Component {
   }
 
   eat = (index) => {
-   // console.warn(".......",index)
     let {list,number,totalWeight,eatApples,eatWeighth} = this.state;
     let hasEatWeight = list.filter((v) => {
       return v.index === index;
     })
-    console.log(hasEatWeight[0])
     eatWeighth += hasEatWeight[0].weight   //过滤出吃掉的苹果,累计求和一共吃掉的重量
     let left = list.filter((v) => {
-       // console.log(v)
         return v.index !== index;    
     })
     number = left.length;  //过滤出剩下的苹果,其长度就是当前苹果的数量
@@ -86,7 +80,6 @@ class App extends Component {
       totalWeight += v.weight;   //累计当前苹果的重量
     }) 
     
-    //console.log(left)
     this.setState({
       list : left,
       number : number,
@@ -98,7 +91,6 @@ class App extends Component {
 
   render() {
     let {list,number,totalWeight,eatApples,eatWeighth} = this.state;
-    //console.warn("list",list)
     return (
       <div className="appleBasket">
          <div className="title">苹果篮子</div>

@@ -1,9 +1,6 @@
 import React , {Component} from 'react';
 
 class AppleItem extends Component {
-    constructor(props){
-        super(props);
-    }
 
     changeWeight = () => {
         let {apple} = this.props;
@@ -19,7 +16,6 @@ class AppleItem extends Component {
 
     render() {
         let {apple} = this.props;
-        //console.warn("apple",apple)
         return (
             <div className="appleItem">
             <div className="apple">
