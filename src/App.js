@@ -69,7 +69,7 @@ class App extends Component {
     let hasEatWeight = list.filter((v) => {
       return v.index === index;
     })
-    eatWeighth += hasEatWeight[0].weight   //过滤出吃掉的苹果,累计求和一共吃掉的重量
+    eatWeighth += hasEatWeight[0].weight   //过滤出吃掉的苹果,累计求和一共吃掉的重量 
     let left = list.filter((v) => {
         return v.index !== index;    
     })
