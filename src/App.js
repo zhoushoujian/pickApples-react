@@ -67,7 +67,7 @@ class App extends Component {
     })
     const number = left.length;  //过滤出剩下的苹果,其长度就是当前苹果的数量
     eatApples++;   //对每次吃掉的苹果进行计数
-    const totalWeight = this.getTotalWeight(list)
+    const totalWeight = this.getTotalWeight(left)
     this.setState({
       list: left,
       number,
