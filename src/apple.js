@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import AppleItem from "./AppleItem"
-import './App.css';
+import AppleItem from "./appleItem"
+import './apple.css';
 
 class App extends Component {
   constructor(props) {
