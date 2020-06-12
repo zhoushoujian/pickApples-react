@@ -7,8 +7,8 @@ class App extends Component {
     super(props);
     const index = 0;
     const name = "红苹果 --";
-    const num = parseInt(Math.random() * 100000, 10);   //取随机数
-    const weight = parseInt(Math.random() * 1000, 10);  //取随机数
+    const num = parseInt(Math.random() * 100000);   //取随机数
+    const weight = parseInt(Math.random() * 1000);  //取随机数
     const obj = { name, num, weight, index };
     const list = [];
     list.push(obj);   //初始化初始状态的数据
@@ -24,8 +24,8 @@ class App extends Component {
   handleAddClick = () => {
     const { list } = this.state;
     const name = "红苹果 --";
-    const num = parseInt(Math.random() * 100000, 10);
-    const weight = parseInt(Math.random() * 1000, 10);
+    const num = parseInt(Math.random() * 100000);
+    const weight = parseInt(Math.random() * 1000);
     let index;
     if (list.length !== 0) {
       index = list[list.length - 1].index;   //如果子组件的个数不为零,则取上一个组件的index,然后+1
@@ -48,7 +48,7 @@ class App extends Component {
     const { list } = this.state;
     list.forEach(item => {
       if (item.weight === currentWeight) {
-        item.weight = parseInt(Math.random() * 1000, 10);   //如果苹果的重量和我们点击的那个苹果的重量相等,就改变点击的那个苹果的重量
+        item.weight = parseInt(Math.random() * 1000);   //如果苹果的重量和我们点击的那个苹果的重量相等,就改变点击的那个苹果的重量
       }
     })
     const totalWeight = this.getTotalWeight(list)
@@ -95,7 +95,7 @@ class App extends Component {
           </div>
         </div>
         {/* 通过数据生成子元素,数组有多少对象就有多少子元素,并向子元素传递方法和值 */}
-        {list.map((value,key) => (
+        {list.map((value, key) => (
           <AppleItem 
             key={key} 
             changeWeight={weight => this.changeWeight(weight)} 
