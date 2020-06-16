@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppleItem from "./appleItem"
+import AppleItem from "./appleItem.jsx"
 import './apple.css';
 
 class App extends Component {
