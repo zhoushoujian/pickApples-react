@@ -7,3 +7,6 @@
   
 ```Tips```
 项目默认采用tsx文件，如需加载jsx文件，请于./src/index.js修改Apple组件的引入路径
+
+```效果图```
+![效果图](https://github.com/zhoushoujian/pickApples-react/blob/master/view.png)
