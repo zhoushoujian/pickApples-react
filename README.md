@@ -32,4 +32,5 @@ npm run eslint
 
 ## 其他版本
 ```redux```: https://github.com/zhoushoujian/pickApples-redux  
+
 ```vue```: https://github.com/zhoushoujian/pickApples-vue  
