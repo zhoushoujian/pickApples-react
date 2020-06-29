@@ -29,3 +29,7 @@ npm run eslint
 
 ## 效果图
 ![效果图](https://github.com/zhoushoujian/pickApples-react/blob/master/view.png)
+
+## 其他版本
+```redux```: https://github.com/zhoushoujian/pickApples-redux  
+```vue```: https://github.com/zhoushoujian/pickApples-vue  
