@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppleItem from "./appleItem.jsx"
+import AppleItem from "./appleItem"
 import './apple.css';
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
     let index;
     if (list.length !== 0) {
       index = list[list.length - 1].index;   //如果子组件的个数不为零,则取上一个组件的index,然后+1
-      index++;
+      index = index + 1;
     } else {
       index = 0;  //如果子组件被清空,则重新计数
     }
@@ -66,7 +66,7 @@ class App extends Component {
       return v.index !== index;
     })
     const number = left.length;  //过滤出剩下的苹果,其长度就是当前苹果的数量
-    eatApples++;   //对每次吃掉的苹果进行计数
+    eatApples = eatApples + 1;   //对每次吃掉的苹果进行计数
     const totalWeight = this.getTotalWeight(left)
     this.setState({
       list: left,
