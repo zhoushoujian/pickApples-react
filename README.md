@@ -34,3 +34,5 @@ npm run eslint
 ```redux```: https://github.com/zhoushoujian/pickApples-redux  
 
 ```vue```: https://github.com/zhoushoujian/pickApples-vue  
+
+```vuex```: https://github.com/zhoushoujian/pickApples-vuex  

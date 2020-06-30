@@ -1,6 +1,7 @@
 {
   "name": "react-demo",
   "version": "1.0.0",
+  "license": "MIT",
   "dependencies": {
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
