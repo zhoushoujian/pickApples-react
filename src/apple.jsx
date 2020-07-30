@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppleItem from "./appleItem"
+import AppleItem from "./appleItem";
 import './apple.css';
 
 class App extends Component {
@@ -35,49 +35,49 @@ class App extends Component {
     }
     const obj = { name, num, weight, index };
     list.push(obj);  //保存新的数据到数组
-    const totalWeight = this.getTotalWeight(list)
+    const totalWeight = this.getTotalWeight(list);
     const number = list.length;
     this.setState({  //刷新状态
       list,
       number,
       totalWeight
-    })
+    });
   }
 
-  changeWeight = (currentWeight) => {
+  changeWeight = currentWeight => {
     const { list } = this.state;
     list.forEach(item => {
       if (item.weight === currentWeight) {
         item.weight = parseInt(Math.random() * 1000);   //如果苹果的重量和我们点击的那个苹果的重量相等,就改变点击的那个苹果的重量
       }
-    })
-    const totalWeight = this.getTotalWeight(list)
+    });
+    const totalWeight = this.getTotalWeight(list);
     this.setState({
       list,
       totalWeight
-    })
+    });
   }
 
-  eat = (index) => {
+  eat = index => {
     let { list, eatApples, eatWeight } = this.state;
-    const hasEatWeight = list.filter((v) => v.index === index)
-    eatWeight += hasEatWeight[0].weight   //过滤出吃掉的苹果,累计求和一共吃掉的重量 
-    const left = list.filter((v) => {
+    const hasEatWeight = list.filter(v => v.index === index);
+    eatWeight += hasEatWeight[0].weight;   //过滤出吃掉的苹果,累计求和一共吃掉的重量 
+    const left = list.filter(v => {
       return v.index !== index;
-    })
+    });
     const number = left.length;  //过滤出剩下的苹果,其长度就是当前苹果的数量
     eatApples = eatApples + 1;   //对每次吃掉的苹果进行计数
-    const totalWeight = this.getTotalWeight(left)
+    const totalWeight = this.getTotalWeight(left);
     this.setState({
       list: left,
       number,
       eatApples,
       totalWeight,
       eatWeight
-    })
+    });
   }
 
-  getTotalWeight = (list) => list.reduce((total, item) => (total + item.weight), 0)
+  getTotalWeight = list => list.reduce((total, item) => (total + item.weight), 0)
 
   render() {
     const { list, number, totalWeight, eatApples, eatWeight } = this.state;
@@ -99,7 +99,7 @@ class App extends Component {
           <AppleItem 
             key={key} 
             changeWeight={weight => this.changeWeight(weight)} 
-            eat={(index) => this.eat(index)} 
+            eat={index => this.eat(index)} 
             apple={value} 
             index={value.index}
           />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppleItem from "./appleItem"
+import AppleItem from "./appleItem";
 import './apple.css';
 
 interface IList {
@@ -45,19 +45,19 @@ class App extends Component {
     let index;
     if (list.length !== 0) {
       index = list[list.length - 1].index;   //如果子组件的个数不为零,则取上一个组件的index,然后+1
-      index = index + 1
+      index = index + 1;
     } else {
       index = 0;  //如果子组件被清空,则重新计数
     }
     const obj = { name, num, weight, index };
     list.push(obj);  //保存新的数据到数组
-    const totalWeight = this.getTotalWeight(list)
+    const totalWeight = this.getTotalWeight(list);
     const number = list.length;
     this.setState({  //刷新状态
       list,
       number,
       totalWeight
-    })
+    });
   }
 
   changeWeight = (currentWeight: number) => {
@@ -66,31 +66,31 @@ class App extends Component {
       if (item.weight === currentWeight) {
         item.weight = Math.floor(Math.random() * 1000);   //如果苹果的重量和我们点击的那个苹果的重量相等,就改变点击的那个苹果的重量
       }
-    })
-    const totalWeight = this.getTotalWeight(list)
+    });
+    const totalWeight = this.getTotalWeight(list);
     this.setState({
       list,
       totalWeight
-    })
+    });
   }
 
   eat = (index: number) => {
     let { list, eatApples, eatWeight } = this.state;
-    const hasEatWeight = list.filter((v) => v.index === index)
-    eatWeight += hasEatWeight[0].weight   //过滤出吃掉的苹果,累计求和一共吃掉的重量 
-    const left = list.filter((v) => {
+    const hasEatWeight = list.filter(v => v.index === index);
+    eatWeight += hasEatWeight[0].weight;   //过滤出吃掉的苹果,累计求和一共吃掉的重量 
+    const left = list.filter(v => {
       return v.index !== index;
-    })
+    });
     const number = left.length;  //过滤出剩下的苹果,其长度就是当前苹果的数量
-    eatApples = eatApples + 1 //对每次吃掉的苹果进行计数
-    const totalWeight = this.getTotalWeight(left)
+    eatApples = eatApples + 1; //对每次吃掉的苹果进行计数
+    const totalWeight = this.getTotalWeight(left);
     this.setState({
       list: left,
       number,
       eatApples,
       totalWeight,
       eatWeight
-    })
+    });
   }
 
   getTotalWeight = (list: IList[]): number => list.reduce((total: number, item: IList) => (total + item.weight), 0)

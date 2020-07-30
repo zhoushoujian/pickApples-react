@@ -8,10 +8,10 @@ const AppleItem = ({
 }) => {
 
   const changeAppleWeight = () => {
-    changeWeight(apple.weight)
-  }
+    changeWeight(apple.weight);
+  };
 
-  const eatApple = () => eat(index)
+  const eatApple = () => eat(index);
 
   return (
     <div className="appleItem">
@@ -31,7 +31,7 @@ const AppleItem = ({
         <button onClick={changeAppleWeight}>重量改变</button>   {/* 调用方法,将子组件方法传递到父组件 */}
       </div>
     </div> 
-  )
-}
+  );
+};
 
 export default AppleItem;
