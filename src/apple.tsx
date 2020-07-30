@@ -99,7 +99,7 @@ class App extends Component {
     const { list, number, totalWeight, eatApples, eatWeight } = this.state;
     return (
       <div className="appleBasket">
-        <div className="title">苹果篮子</div>
+        <div className="title">苹果篮子(react)</div>
         <div className="stats">
             <div className="section">
               <div className="head">当前</div>
