@@ -3,13 +3,13 @@
   border: 1px solid #ddd;
   margin: 50px auto;
 }
-.appleBasket{
+.appleBasket {
   width: 470px;
   margin: 20px auto;
   border-radius: 4px;
   border: 1px solid #ddd;
 }
-.appleBasket>.title {
+.appleBasket > .title {
   height: 66px;
   line-height: 66px;
   text-align: center;
@@ -17,15 +17,15 @@
   font-size: 22px;
   font-weight: bold;
 }
-.appleBasket>.btn-div {
+.appleBasket > .btn-div {
   text-align: center;
 }
-.appleBasket>.btn-div>button {
+.appleBasket > .btn-div > button {
   background-color: #096;
   padding: 10px 45px;
   margin: 10px auto;
 }
-.appleBasket>.stats {
+.appleBasket > .stats {
   width: 100%;
   border-top: 1px dashed #ddd;
   border-bottom: 1px dashed #ddd;
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: space-around;
 }
-.btn-div>button {
+.btn-div > button {
   border: none;
   outline: none;
   margin: 0 3px;
@@ -53,17 +53,17 @@
   justify-content: space-around;
   align-items: center;
 }
-.appleItem >.info>.name {
+.appleItem > .info > .name {
   padding: 6px 0;
   font-size: 18px;
   color: #069;
   font-weight: 500;
 }
-.appleItem >.info>.weight {
+.appleItem > .info > .weight {
   font-size: 15px;
   font-weight: 200;
 }
-.btn-div>button {
+.btn-div > button {
   border: none;
   outline: none;
   margin: 0 3px;
@@ -78,18 +78,18 @@
   padding: 0 40px;
   border-right: 1px solid #f0f0f0;
 }
-.section>.content {
+.section > .content {
   font-size: 18px;
   font-weight: 400;
 }
-.section>.head {
+.section > .head {
   padding: 6px 0;
   font-size: 16px;
   color: #069;
 }
-.btn-div>button:hover {
-  background-color: #5dade2
+.btn-div > button:hover {
+  background-color: #5dade2;
 }
-.appleBasket>.btn-div>button:hover {
-  background-color: #55d98d
+.appleBasket > .btn-div > button:hover {
+  background-color: #55d98d;
 }
